@@ -17,13 +17,13 @@ spec:
       containers:
         - name: minio
           env:
-            - name: MINIO_SECRETS
+            - name: MINIO_LOGIN_SECRET
               valueFrom:
                 secretKeyRef:
                   name: secrets-for-minio
                   key: LOGIN_SECRET
                   optional: false
-            - name: MINIO_SECRET_KEY
+            - name: MINIO_PASSWORD_SECRET
               valueFrom:
                 secretKeyRef:
                   name: secrets-for-minio
